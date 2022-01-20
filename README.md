@@ -18,5 +18,4 @@ Bash script that automatically builds and deploys a static Gatsby site to GitHub
 These are the default values present in the script, feel free to change any of these to suit your needs.
 1. Your release branch is called `main` (this is the branch that GitHub Pages is deployed from)
 2. Your latest changes live in a branch called `develop`
-3. 
 ##### PS: Make sure the script is executable by running `chmod +x deploy.sh` if you're not able to run it
