@@ -38,13 +38,13 @@ push_to_temp() {
     printf "%b%bCreating a temp branch...%b\n" "$BOLD" "$CYAN" "$NC"
     git checkout -b "$temp_branch"
     ignorecontent="code/"
-    cd .. && echo "$ignorecontent" > .gitignore
+    cd ..
+    echo "$ignorecontent" > .gitignore
     git rm -r code/ # ignore already committed 'code' dir
     git add .
     git commit -m "Gatsby build ${date_time}"
     git push origin "$temp_branch"
     printf "%b%bSuccessfully pushed changes to temp branch%b\n" "$BOLD" "$LIGHTGREEN" "$NC"
-    wait
 }
 
 # merge temp branch to main
@@ -63,7 +63,6 @@ clean_local() {
     printf "%b%bDeleting all local generated files...%b\n" "$BOLD" "$CYAN" "$NC"
     touch blankfile
     rm -vr !(code|.git)
-    wait
 }
 
 # delete temp branch
